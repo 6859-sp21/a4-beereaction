@@ -1,0 +1,601 @@
+{
+   "name":"Beer",
+   "children":[
+      {
+         "name":"Ale",
+         "children":[
+            {
+               "name":"Pale Ale",
+               "children":[
+                  {
+                     "name":"IPA",
+                     "children":[
+                        {
+                           "name":"English India Pale Ale (IPA)",
+                           "value":381
+                        },
+                        {
+                           "name":"Belgian IPA",
+                           "value":230
+                        },
+                        {
+                           "name":"American IPA",
+                           "value":2211
+                        },
+                        {
+                           "name":"American Double / Imperial IPA",
+                           "value":1176
+                        }
+                     ]
+                  },
+                  {
+                     "name":"American",
+                     "children":[
+                        {
+                           "name":"American Pale Wheat Ale",
+                           "value":573
+                        },
+                        {
+                           "name":"American Pale Ale (APA)",
+                           "value":1890
+                        }
+                     ]
+                  },
+                  {
+                     "name":"English",
+                     "children":[
+                        {
+                           "name":"English Pale Ale",
+                           "value":872
+                        },
+                        {
+                           "name":"Extra Special / Strong Bitter (ESB)",
+                           "value":625
+                        },
+                        {
+                           "name":"English Pale Mild Ale",
+                           "value":105
+                        }
+                     ]
+                  },
+                  {
+                     "name":"Belgian",
+                     "children":[
+                        {
+                           "name":"Belgian Pale Ale",
+                           "value":1019
+                        },
+                        {
+                           "name":"Belgian Strong Pale Ale",
+                           "value":712
+                        }
+                     ]
+                  },
+                  {
+                     "name":"Else",
+                     "children":[
+                        {
+                           "name":"Biere de Garde",
+                           "value":204
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "name":"Dark/Black/Brown Ale",
+               "children":[
+                  {
+                     "name":"American",
+                     "children":[
+                        {
+                           "name":"American Black Ale",
+                           "value":331
+                        },
+                        {
+                           "name":"American Dark Wheat Ale",
+                           "value":72
+                        },
+                        {
+                           "name":"American Brown Ale",
+                           "value":620
+                        }
+                     ]
+                  },
+                  {
+                     "name":"English",
+                     "children":[
+                        {
+                           "name":"English Dark Mild Ale",
+                           "value":313
+                        },
+                        {
+                           "name":"English Brown Ale",
+                           "value":496
+                        }
+                     ]
+                  },
+                  {
+                     "name":"Belgian",
+                     "children":[
+                        {
+                           "name":"Belgian Dark Ale",
+                           "value":320
+                        },
+                        {
+                           "name":"Belgian Strong Dark Ale",
+                           "value":649
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "name":"Red Ale",
+               "children":[
+                  {
+                     "name":"Flanders Red Ale",
+                     "value":105
+                  },
+                  {
+                     "name":"American Amber / Red Ale",
+                     "value":1407
+                  },
+                  {
+                     "name":"Irish Red Ale",
+                     "value":256
+                  }
+               ]
+            },
+            {
+               "name":"Strong Ale",
+               "children":[
+                  {
+                     "name":"English Strong Ale",
+                     "value":252
+                  },
+                  {
+                     "name":"American Strong Ale",
+                     "value":550
+                  }
+               ]
+            },
+            {
+               "name":"Else",
+               "children":[
+                  {
+                     "name":"Scottish Ale",
+                     "value":378
+                  },
+                  {
+                     "name":"Saison / Farmhouse Ale",
+                     "value":862
+                  },
+                  {
+                     "name":"American Blonde Ale",
+                     "value":693
+                  },
+                  {
+                     "name":"Scottish Gruit / Ancient Herbed Ale",
+                     "value":69
+                  },
+                  {
+                     "name":"Old Ale",
+                     "value":271
+                  },
+                  {
+                     "name":"Sahti",
+                     "value":18
+                  },
+                  {
+                     "name":"Cream Ale",
+                     "value":176
+                  },
+                  {
+                     "name":"American Wild Ale",
+                     "value":471
+                  },
+                  {
+                     "name":"Scotch Ale / Wee Heavy",
+                     "value":449
+                  },
+                  {
+                     "name":"Pumpkin Ale",
+                     "value":243
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Lager",
+         "children":[
+            {
+               "name":"Pilsner",
+               "children":[
+                  {
+                     "name":"German Pilsener",
+                     "value":961
+                  },
+                  {
+                     "name":"Czech Pilsener",
+                     "value":504
+                  },
+                  {
+                     "name":"American Double / Imperial Pilsner",
+                     "value":119
+                  }
+               ]
+            },
+            {
+               "name":"Dark Lager",
+               "children":[
+                  {
+                     "name":"Munich Dunkel Lager",
+                     "value":365
+                  },
+                  {
+                     "name":"Schwarzbier",
+                     "value":288
+                  },
+                  {
+                     "name":"Euro Dark Lager",
+                     "value":234
+                  }
+               ]
+            },
+            {
+               "name":"Pale/Light Lager",
+               "children":[
+                  {
+                     "name":"American Pale Lager",
+                     "value":358
+                  },
+                  {
+                     "name":"Munich Helles Lager",
+                     "value":365
+                  },
+                  {
+                     "name":"Euro Pale Lager",
+                     "value":1162
+                  },
+                  {
+                     "name":"Light Lager",
+                     "value":392
+                  },
+                  {
+                     "name":"Maibock / Helles Bock",
+                     "value":346
+                  }
+               ]
+            },
+            {
+               "name":"Else",
+               "children":[
+                  {
+                     "name":"Euro Strong Lager",
+                     "value":242
+                  },
+                  {
+                     "name":"American Adjunct Lager",
+                     "value":782
+                  },
+                  {
+                     "name":"Dortmunder / Export Lager",
+                     "value":233
+                  },
+                  {
+                     "name":"Bock",
+                     "value":429
+                  },
+                  {
+                     "name":"Keller Bier / Zwickel Bier",
+                     "value":222
+                  },
+                  {
+                     "name":"Vienna Lager",
+                     "value":267
+                  },
+                  {
+                     "name":"Japanese Rice Lager",
+                     "value":43
+                  },
+                  {
+                     "name":"Eisbock",
+                     "value":58
+                  },
+                  {
+                     "name":"American Amber / Red Lager",
+                     "value":207
+                  },
+                  {
+                     "name":"Marzen / Oktoberfest",
+                     "value":529
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Stout",
+         "children":[
+            {
+               "name":"Imperial Stout",
+               "children":[
+                  {
+                     "name":"Russian Imperial Stout",
+                     "value":639
+                  },
+                  {
+                     "name":"American Double / Imperial Stout",
+                     "value":739
+                  }
+               ]
+            },
+            {
+               "name":"Else",
+               "children":[
+                  {
+                     "name":"Irish Dry Stout",
+                     "value":287
+                  },
+                  {
+                     "name":"Foreign / Export Stout",
+                     "value":146
+                  },
+                  {
+                     "name":"American Stout",
+                     "value":722
+                  },
+                  {
+                     "name":"Milk / Sweet Stout",
+                     "value":259
+                  },
+                  {
+                     "name":"English Stout",
+                     "value":267
+                  },
+                  {
+                     "name":"Oatmeal Stout",
+                     "value":382
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Porter",
+         "children":[
+            {
+               "name":"English Porter",
+               "value":351
+            },
+            {
+               "name":"American Porter",
+               "value":1189
+            },
+            {
+               "name":"Baltic Porter",
+               "value":263
+            }
+         ]
+      },
+      {
+         "name":"Else",
+         "children":[
+            {
+               "name":"By Country",
+               "children":[
+                  {
+                     "name":"American",
+                     "children":[
+                        {
+                           "name":"American Malt Liquor",
+                           "value":119
+                        },
+                        {
+                           "name":"California Common / Steam Beer",
+                           "value":145
+                        },
+                        {
+                           "name":"American Barleywine",
+                           "value":646
+                        }
+                     ]
+                  },
+                  {
+                     "name":"English",
+                     "children":[
+                        {
+                           "name":"English Barleywine",
+                           "value":318
+                        },
+                        {
+                           "name":"English Bitter",
+                           "value":1212
+                        }
+                     ]
+                  },
+                  {
+                     "name":"German",
+                     "children":[
+                        {
+                           "name":"Berliner Weissbier",
+                           "value":77
+                        },
+                        {
+                           "name":"Weizenbock",
+                           "value":208
+                        },
+                        {
+                           "name":"Kolsch",
+                           "value":322
+                        },
+                        {
+                           "name":"Gose",
+                           "value":26
+                        },
+                        {
+                           "name":"Dunkelweizen",
+                           "value":275
+                        },
+                        {
+                           "name":"Altbier",
+                           "value":319
+                        }
+                     ]
+                  },
+                  {
+                     "name":"Belgian",
+                     "children":[
+                        {
+                           "name":"Gueuze",
+                           "value":86
+                        },
+                        {
+                           "name":"Flanders Oud Bruin",
+                           "value":99
+                        },
+                        {
+                           "name":"Lambic - Unblended",
+                           "value":55
+                        },
+                        {
+                           "name":"Lambic - Fruit",
+                           "value":198
+                        },
+                        {
+                           "name":"Faro",
+                           "value":19
+                        }
+                     ]
+                  },
+                  {
+                     "name":"Else",
+                     "children":[
+                        {
+                           "name":"Happoshu",
+                           "value":67
+                        },
+                        {
+                           "name":"Chile Beer",
+                           "value":75
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "name":"High/Low ABV",
+               "children":[
+                  {
+                     "name":"Low Alcohol Beer",
+                     "value":118
+                  },
+                  {
+                     "name":"Tripel",
+                     "value":600
+                  },
+                  {
+                     "name":"Quadrupel (Quad)",
+                     "value":164
+                  },
+                  {
+                     "name":"Doppelbock",
+                     "value":500
+                  },
+                  {
+                     "name":"Dubbel",
+                     "value":369
+                  }
+               ]
+            },
+            {
+               "name":"Ingredients",
+               "children":[
+                  {
+                     "name":"Rye",
+                     "children":[
+                        {
+                           "name":"Rye Beer",
+                           "value":271
+                        },
+                        {
+                           "name":"Roggenbier",
+                           "value":36
+                        },
+                        {
+                           "name":"Kvass",
+                           "value":19
+                        }
+                     ]
+                  },
+                  {
+                     "name":"Wheat",
+                     "children":[
+                        {
+                           "name":"Kristalweizen",
+                           "value":90
+                        },
+                        {
+                           "name":"Witbier",
+                           "value":838
+                        },
+                        {
+                           "name":"Wheatwine",
+                           "value":98
+                        },
+                        {
+                           "name":"Hefeweizen",
+                           "value":980
+                        }
+                     ]
+                  },
+                  {
+                     "name":"Else",
+                     "children":[
+                        {
+                           "name":"Fruit / Vegetable Beer",
+                           "value":1101
+                        },
+                        {
+                           "name":"Herbed / Spiced Beer",
+                           "value":535
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "name":"Else",
+               "children":[
+                  {
+                     "name":"Winter Warmer",
+                     "value":409
+                  },
+                  {
+                     "name":"Rauchbier",
+                     "value":115
+                  },
+                  {
+                     "name":"Smoked Beer",
+                     "value":169
+                  },
+                  {
+                     "name":"Braggot",
+                     "value":49
+                  },
+                  {
+                     "name":"Black & Tan",
+                     "value":41
+                  },
+                  {
+                     "name":"Biere de Champagne / Biere Brut",
+                     "value":19
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}
