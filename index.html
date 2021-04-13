@@ -1,90 +1,386 @@
 <!DOCTYPE html>
-<head>
-  <title> MVP: Beereaction </title>
-  <style type="text/css">
+<html>
+<title>Beereaction</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
+body {font-family: "Open Sans"}
 
+div.tooltip {
+        position: absolute;
+        text-align: center;
+        width: auto;
+        height: auto;
+        padding: 2px;
+        font: 16px sans-serif;
+        /*background: lightsteelblue; */
+        border: 1.5px solid;
+        border-radius: 8px;
+        pointer-events: none;
+      }
+#first_entry{
+        position: relative;
+}
 
-    #observablehq-map-0589996a
-    {
-      position: relative;
-      top:-100px;
-      left:0px;
-      margin-bottom: -90px;
-    }
-
-
-    #observablehq-viewof-aroma_appearance-0589996a
-    {
-      position: relative;
-      left:20px;
-    }
-
-    #aroma_label
-    {
-      transform: rotate(-90deg) translate(-110px,-10px);
-      width: 50px;
-      height: 20px;
-    }
-
-    #appearance_label
-    {
-      transform: translate(65px,180px);
-    }
-
-    #palate_label
-    {
+#observablehq-legend-7518a2fc{
       position: absolute;
-      transform: rotate(-90deg) translate(-68px,220px);
-      width: 50px;
-      height: 20px;
-      /*border: solid red;*/
-      /*left:10px;
-      top: 100px;*/
+      transform: translate(0px,-600px);
+      width: 70px;
+
     }
 
-    #taste_label
-    {
-      position: absolute;
-      transform: translate(316px,161px);
-    }
-
-    #observablehq-viewof-palate_taste-0589996a
-    {
+#observablehq-viewof-perf_result-7518a2fc {
       position: relative;
-      top: -165px;
-      left: 250px;
+      margin-right: auto;
     }
-  </style>
-</head>
 
-<body>
-<h1> MVP: Beereaction </h1>
-<div id="observablehq-viewof-beer_type-0589996a"></div>
-<div id="aroma_label"> Aroma </div>
-<div id="appearance_label"> Appearance </div>
-<div id="palate_label"> Palate </div>
-<div id="taste_label"> Taste </div>
-<div id="observablehq-viewof-aroma_appearance-0589996a"></div>
-<div id="observablehq-viewof-palate_taste-0589996a"></div>
-<div id="observablehq-map-0589996a"></div>
-<div id="observablehq-viewof-myscale-0589996a"></div>
-<div id="observablehq-viewof-rotatex-0589996a"></div>
-<div id="observablehq-viewof-translateY-0589996a"></div>
+#observablehq-tree_chart-7518a2fc {
+      margin-top: 15px;
+}
+
+
+#sunburst-panel{
+        position: relative;
+}
+
+/*sunburst chart*/
+#observablehq-chart-a4ce193b{
+/*        position: relative;
+        transform: translate(0px,-0px);
+        width: 50%;*/
+        margin-top: -70px;
+        margin-bottom: : -120px;
+        bottom: -120px;
+
+}
+
+</style>
+<body class="w3-light-grey">
+
+  
+<div class="w3-content" style="max-width:1600px">
+
+  <!-- Header -->
+  <header class="w3-container w3-center w3-padding-48 w3-white">
+    <h1 class="w3-xxxlarge"><span class="w3-tag" style="color: #e08e00"><b>BEEREACTION</b></span></h1>
+    <h3> Interactive and Personalized Beer Recommendation </h3>
+  </header>
+
+
+  <!-- Grid -->
+  <div class="w3-row w3-padding w3-border">
+
+    <!-- Entries -->
+    <div class="w3-col l8 s12">
+    
+      <!-- First Entry -->
+      <div id="first_entry" class="w3-container w3-white w3-margin w3-padding-large">
+        <div class="w3-center">
+          <h3 style="color: #e08e00">Beer Map</h3>
+          <h5><span class="w3-opacity"> Scroll/Double-click to zoom, drag to pan. &emsp; Hover over points for more information! </span></h5>
+        </div>
+        <!-- !!! Chart and Legend!!! -->
+        <div id="observablehq-chart-7518a2fc"></div>
+        <div id="observablehq-legend-7518a2fc"></div>
+        <hr>
+        <div class="w3-center">
+          <h4 style="color: #e08e00">Top 10 Beers According to Your Preference </h4>
+        </div>
+        <div id="observablehq-table_print-7518a2fc"></div>
+
+        <div class="w3-justify">
+          
+          <p class="w3-clear"></p>
+
+          <div class="w3-row w3-margin-bottom" id="demo1" style="display:none">
+
+            <hr>
+              
+              
+          </div>
+        </div>
+      </div>
+      <hr>
+
+    <!-- END ENTRIES -->
+    </div>
+
+
+    <!-- Right Column -->
+    <div class="w3-col l4">
+      <!-- Panel start -->
+      <div class="w3-white w3-margin">
+        <!-- Choose background color here! -->
+        <div class="w3-container w3-white">
+          <h4 style="color: #e08e00">Beer Filter</h4>
+          <h6><span class="w3-opacity">Select beer styles and types to explore!
+              </span>
+          </h6>
+          <!-- !!! Beer Type Selector!! -->
+          <div id="observablehq-viewof-beer_style_filter-7518a2fc"></div>
+          <h8><span class="w3-opacity">(Ctrl+click or drag to select multiple beer types)
+              </span>
+          </h8>
+          <div id="observablehq-viewof-beer_type-7518a2fc"></div>
+          <h6><span class="w3-opacity">Choose number of beers to show.
+              </span>
+          </h6>
+          <div id="observablehq-viewof-num_to_show_range-7518a2fc"></div>
+          <h6><span class="w3-opacity">Choose interested range of ABV (Alcohol by volume).
+              </span>
+          </h6>
+          <div id="observablehq-viewof-abv_range-7518a2fc"></div>
+          <div id="observablehq-showing_beer_text-7518a2fc"></div>
+          
+        </div>
+      </div>
+      <hr>
+
+
+      <!-- Panel start -->
+      <div class="w3-white w3-margin">
+        <!-- Choose background color here! -->
+        <div class="w3-container w3-white">
+          <h4 style="color: #e08e00">Preference Selector</h4>
+          <h6><span class="w3-opacity">Choose your beer preference here by dragging the circle!
+              </span>
+          </h6>
+          <!-- !!! Preference Selector and Text!! -->
+          <div id="observablehq-viewof-perf_result-7518a2fc"></div>
+          <div id="observablehq-perf_text-7518a2fc"></div>
+          
+        </div>
+      </div>
+      <hr>
+
+      <!-- <div class="w3-white w3-margin">
+        <div class="w3-container w3-white">
+          <h4 style="color: #e08e00">Beer Type 101</h4>
+          <h7>Ale: <span class="w3-opacity"> Oldest style of beer. Crafted via warm-termperature fermentation for a short period of time. Sweet, full-bodied and fruity. </span>
+          </h7>
+          <hr>
+          <h7>Lager: <span class="w3-opacity">Fermented at a low temperature for a long time. Common among European countries. Light, crisp taste that is mellow and smooth. </span>
+          </h7>
+          <hr>
+          <h7>Stout: <span class="w3-opacity">Dark and roasty. Taste less sweet than porters, and often bitter, which comes from unmalted roasted barley.</span>
+          </h7>
+          <hr>
+          <h7>Porter: <span class="w3-opacity">Known for its dark black color and roasted malt aroma and notes. Fruity and dry in flavor.</span>
+          </h7>
+          <hr>
+                  
+        </div>
+      </div>
+      <hr> -->
+
+
+      <!-- Option 2 with Black Label -->
+      <!-- <div class="w3-white w3-margin">
+        <div class="w3-container w3-padding w3-black">
+          <h4>Option 2</h4>
+        </div>
+        <div class="w3-container w3-white">
+          <div id="observablehq-viewof-perf_result-7518a2fc"></div>
+          <div id="observablehq-perf_text-7518a2fc"></div>
+        </div>
+      </div>
+      <hr> -->
+
+
+    <!-- END Right column -->
+    </div>
+
+
+
+  <!-- Second Entry -->
+    <div id="sunburst-panel" class="w3-col l8 s12">
+    
+      <!-- Entry -->
+      <div class="w3-container w3-white w3-margin w3-padding-large">
+        <div class="w3-center">
+          <h3 style="color: #e08e00"> Beer Exploration</h3>
+          <h5><span class="w3-opacity"> We know that not everyone is a beer expert... Explore beer types here! </span></h5>
+          <h8><span class="w3-opacity"> Click a category to expand. Click center to go back.
+              </span>
+          </h8>
+        </div>
+
+        <div id="observablehq-chart-a4ce193b"></div>
+        <!-- <div id="observablehq-tree_chart-7518a2fc"></div> -->
+
+        <hr>
+        <div class="w3-center">
+          <h5><span class="w3-opacity">Or use this tree!</span></h5>
+          <h8><span class="w3-opacity"> Click a category to expand. Click again to fold.
+              </span>
+          </h8>
+        </div>
+        <div id="observablehq-tree_chart-7518a2fc"></div>
+
+        <div class="w3-justify">
+          
+          <p class="w3-clear"></p>
+
+          <div class="w3-row w3-margin-bottom" id="demo1" style="display:none">
+            <hr>         
+          </div>
+        </div>
+      </div>
+      <hr>
+
+
+    <!-- END ENTRIES -->
+    </div>
+
+    <!-- <div class="w3-col l8 s12"> -->
+    
+      <!-- Entry -->
+      <!-- <div class="w3-container w3-white w3-margin w3-padding-large"> -->
+        <!-- <div class="w3-center"> -->
+          <!-- <h3>Choose between this and the one above (or keep both?)</h3> -->
+          <!-- <h5>Title description, <span class="w3-opacity"> temp </span></h5> -->
+        <!-- </div> -->
+        <!-- <div id="observablehq-tree_chart-7518a2fc"></div> -->
+        <!-- <div id="observablehq-chart-a4ce193b"></div> -->
+        <!-- <div class="w3-justify"> -->
+          
+          <!-- <p class="w3-clear"></p> -->
+
+          <!-- <div class="w3-row w3-margin-bottom" id="demo1" style="display:none"> -->
+            <!-- <hr> -->     
+          <!-- </div>
+        </div>
+      </div>
+      <hr> -->
+      
+    <div class="w3-col l4">
+    	<div class="w3-white w3-margin">
+        <div class="w3-container w3-white">
+          <h4 style="color: #e08e00">Beer Type 101</h4>
+          <h7>Ale: <span class="w3-opacity"> Oldest style of beer. Crafted via warm-termperature fermentation for a short period of time. Sweet, full-bodied and fruity. </span>
+          </h7>
+          <hr>
+          <h7>Lager: <span class="w3-opacity">Fermented at a low temperature for a long time. Common among European countries. Light, crisp taste that is mellow and smooth. </span>
+          </h7>
+          <hr>
+          <h7>Stout: <span class="w3-opacity">Dark and roasty. Taste less sweet than porters, and often bitter, which comes from unmalted roasted barley.</span>
+          </h7>
+          <hr>
+          <h7>Porter: <span class="w3-opacity">Known for its dark black color and roasted malt aroma and notes. Fruity and dry in flavor.</span>
+          </h7>
+          <hr>
+                  
+        </div>
+      </div>
+      <hr>
+    </div>
+
+
+
+    <!-- END ENTRIES -->
+    </div>
+
+  <!-- END GRID -->
+  </div>
+
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-container w3-dark-grey" style="padding:10px">
+  <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <p style="text-align:right">Dataset
+  	<br> <a href="https://www.kaggle.com/rdoume/beerreviews">https://www.kaggle.com/rdoume/beerreviews</a> 
+  </p>
+  <p style="text-align:right">Inspirations 
+  	 <br> <a href="https://github.com/d3/d3-geo">https://github.com/d3/d3-geo</a>
+  	 <br> <a href="https://observablehq.com/@jashkenas/inputs">https://observablehq.com/@jashkenas/inputs</a>
+  	 <br> <a href="https://observablehq.com/@d3/gallery">https://observablehq.com/@d3/gallery</a>
+  	 <br> <a href="https://www.w3schools.com/w3css/default.asp">https://www.w3schools.com/w3css/default.asp</a>
+  	 <br> <a href="https://observablehq.com/d/1e9437080e92b7e6">https://observablehq.com/d/1e9437080e92b7e6</a>
+  	 <br> <a href="https://observablehq.com/d/47a5c89ed744c436">https://observablehq.com/d/47a5c89ed744c436</a>
+  	 <br> <a href="https://observablehq.com/d/47a5c89ed744c436">https://observablehq.com/d/47a5c89ed744c436</a>
+  </p>
+  <p style="text-align:right"> Beer Information
+  	<br> <a href="https://hospitalityinsights.ehl.edu/beer-types">https://hospitalityinsights.ehl.edu/beer-types</a> 
+  	<br> <a href="https://en.wikipedia.org/wiki/Ale#:~:text=Ale%20is%20a%20type%20of,and%20act%20as%20a%20preservative">https://en.wikipedia.org/wiki/Ale#:~:text=Ale%20is%20a%20type%20of,and%20act%20as%20a%20preservative</a><br> <a href="https://www.thespruceeats.com/definition-of-lager-353244#:~:text=Generally%2C%20the%20characteristics%20of%20a,ales%20and%20are%20less%20bitter">https://www.thespruceeats.com/definition-of-lager-353244#:~:text=Generally%2C%20the%20characteristics%20of%20a,ales%20and%20are%20less%20bitter</a>
+  </p>
+  <p style="text-align:left"> 
+  	Kim, Yo-whan
+  	<br> Shin, Hyeyoung
+  </p>
+
+</footer>
+
 
 <script type="module">
 import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-import define from "https://api.observablehq.com/@yowhan/filter-data-by-user-input.js?v=3";
+import define from "https://api.observablehq.com/@yowhan/beereaction-v2.js?v=3";
 new Runtime().module(define, name => {
-  if (name === "viewof beer_type") return new Inspector(document.querySelector("#observablehq-viewof-beer_type-0589996a"));
-  if (name === "viewof aroma_appearance") return new Inspector(document.querySelector("#observablehq-viewof-aroma_appearance-0589996a"));
-  if (name === "viewof palate_taste") return new Inspector(document.querySelector("#observablehq-viewof-palate_taste-0589996a"));
-  if (name === "map") return new Inspector(document.querySelector("#observablehq-map-0589996a"));
-  if (name === "viewof myscale") return new Inspector(document.querySelector("#observablehq-viewof-myscale-0589996a"));
-  if (name === "viewof rotatex") return new Inspector(document.querySelector("#observablehq-viewof-rotatex-0589996a"));
-  if (name === "viewof translateY") return new Inspector(document.querySelector("#observablehq-viewof-translateY-0589996a"));
-  return ["drawMap"].includes(name);
+  if (name === "chart") return new Inspector(document.querySelector("#observablehq-chart-7518a2fc"));
+  if (name === "legend") return new Inspector(document.querySelector("#observablehq-legend-7518a2fc"));
+  if (name === "viewof perf_result") return new Inspector(document.querySelector("#observablehq-viewof-perf_result-7518a2fc"));
+  if (name === "perf_text") return new Inspector(document.querySelector("#observablehq-perf_text-7518a2fc"));
+  if (name === "viewof beer_style_filter") return new Inspector(document.querySelector("#observablehq-viewof-beer_style_filter-7518a2fc"));
+  if (name === "viewof beer_type") return new Inspector(document.querySelector("#observablehq-viewof-beer_type-7518a2fc"));
+  if (name === "showing_beer_text") return new Inspector(document.querySelector("#observablehq-showing_beer_text-7518a2fc"));
+  if (name === "viewof num_to_show_range") return new Inspector(document.querySelector("#observablehq-viewof-num_to_show_range-7518a2fc"));
+  if (name === "viewof abv_range") return new Inspector(document.querySelector("#observablehq-viewof-abv_range-7518a2fc"));
+  if (name === "top_5_text") return new Inspector(document.querySelector("#observablehq-top_5_text-7518a2fc"));
+  if (name === "table_print") return new Inspector(document.querySelector("#observablehq-table_print-7518a2fc"));
+  if (name === "tree_chart") return new Inspector(document.querySelector("#observablehq-tree_chart-7518a2fc"));
+  return ["filtered_data","sliced_data","filtered_beer_type_data_pre","filtered_beer_type_data","beer_type"].includes(name);
 });
 </script>
+
+
+
+<!-- <div id="observablehq-legend-7518a2fc"></div> -->
+<!-- <div id="observablehq-viewof-perf_result-7518a2fc"></div>
+<div id="observablehq-perf_text-7518a2fc"></div>
+<div id="observablehq-viewof-beer_style_filter-7518a2fc"></div>
+<div id="observablehq-viewof-beer_type-7518a2fc"></div>
+<div id="observablehq-showing_beer_text-7518a2fc"></div>
+<div id="observablehq-viewof-num_to_show_range-7518a2fc"></div>
+<div id="observablehq-viewof-abv_range-7518a2fc"></div> -->
+<!-- <div id="observablehq-top_5_text-7518a2fc"></div> -->
+<!-- <div id="observablehq-table_print-7518a2fc"></div> -->
+<!-- <div id="observablehq-tree_chart-7518a2fc"></div> -->
+
+
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+import define from "https://api.observablehq.com/@yowhan/beereaction-v2.js?v=3";
+new Runtime().module(define, name => {
+  if (name === "chart") return new Inspector(document.querySelector("#observablehq-chart-7518a2fc"));
+  if (name === "legend") return new Inspector(document.querySelector("#observablehq-legend-7518a2fc"));
+  if (name === "viewof perf_result") return new Inspector(document.querySelector("#observablehq-viewof-perf_result-7518a2fc"));
+  if (name === "perf_text") return new Inspector(document.querySelector("#observablehq-perf_text-7518a2fc"));
+  if (name === "viewof beer_style_filter") return new Inspector(document.querySelector("#observablehq-viewof-beer_style_filter-7518a2fc"));
+  if (name === "viewof beer_type") return new Inspector(document.querySelector("#observablehq-viewof-beer_type-7518a2fc"));
+  if (name === "showing_beer_text") return new Inspector(document.querySelector("#observablehq-showing_beer_text-7518a2fc"));
+  if (name === "viewof num_to_show_range") return new Inspector(document.querySelector("#observablehq-viewof-num_to_show_range-7518a2fc"));
+  if (name === "viewof abv_range") return new Inspector(document.querySelector("#observablehq-viewof-abv_range-7518a2fc"));
+  // if (name === "top_5_text") return new Inspector(document.querySelector("#observablehq-top_5_text-7518a2fc"));
+  if (name === "table_print") return new Inspector(document.querySelector("#observablehq-table_print-7518a2fc"));
+  if (name === "tree_chart") return new Inspector(document.querySelector("#observablehq-tree_chart-7518a2fc"));
+  return ["filtered_data","sliced_data","filtered_beer_type_data_pre","filtered_beer_type_data","beer_type"].includes(name);
+});
+</script>
+
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+import define from "https://api.observablehq.com/@yowhan/sunburst-diagram.js?v=3";
+new Runtime().module(define, name => {
+  if (name === "chart") return new Inspector(document.querySelector("#observablehq-chart-a4ce193b"));
+});
+</script>
+
+
 </body>
-
-
+</html>

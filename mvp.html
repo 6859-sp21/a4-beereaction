@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+  <title> MVP: Beereaction </title>
+  <style type="text/css">
+
+
+    #observablehq-map-0589996a
+    {
+      position: relative;
+      top:-100px;
+      left:0px;
+      margin-bottom: -90px;
+    }
+
+
+    #observablehq-viewof-aroma_appearance-0589996a
+    {
+      position: relative;
+      left:20px;
+    }
+
+    #aroma_label
+    {
+      transform: rotate(-90deg) translate(-110px,-10px);
+      width: 50px;
+      height: 20px;
+    }
+
+    #appearance_label
+    {
+      transform: translate(65px,180px);
+    }
+
+    #palate_label
+    {
+      position: absolute;
+      transform: rotate(-90deg) translate(-68px,220px);
+      width: 50px;
+      height: 20px;
+      /*border: solid red;*/
+      /*left:10px;
+      top: 100px;*/
+    }
+
+    #taste_label
+    {
+      position: absolute;
+      transform: translate(316px,161px);
+    }
+
+    #observablehq-viewof-palate_taste-0589996a
+    {
+      position: relative;
+      top: -165px;
+      left: 250px;
+    }
+  </style>
+</head>
+
+<body>
+<h1> MVP: Beereaction </h1>
+<div id="observablehq-viewof-beer_type-0589996a"></div>
+<div id="aroma_label"> Aroma </div>
+<div id="appearance_label"> Appearance </div>
+<div id="palate_label"> Palate </div>
+<div id="taste_label"> Taste </div>
+<div id="observablehq-viewof-aroma_appearance-0589996a"></div>
+<div id="observablehq-viewof-palate_taste-0589996a"></div>
+<div id="observablehq-map-0589996a"></div>
+<div id="observablehq-viewof-myscale-0589996a"></div>
+<div id="observablehq-viewof-rotatex-0589996a"></div>
+<div id="observablehq-viewof-translateY-0589996a"></div>
+
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+import define from "https://api.observablehq.com/@yowhan/filter-data-by-user-input.js?v=3";
+new Runtime().module(define, name => {
+  if (name === "viewof beer_type") return new Inspector(document.querySelector("#observablehq-viewof-beer_type-0589996a"));
+  if (name === "viewof aroma_appearance") return new Inspector(document.querySelector("#observablehq-viewof-aroma_appearance-0589996a"));
+  if (name === "viewof palate_taste") return new Inspector(document.querySelector("#observablehq-viewof-palate_taste-0589996a"));
+  if (name === "map") return new Inspector(document.querySelector("#observablehq-map-0589996a"));
+  if (name === "viewof myscale") return new Inspector(document.querySelector("#observablehq-viewof-myscale-0589996a"));
+  if (name === "viewof rotatex") return new Inspector(document.querySelector("#observablehq-viewof-rotatex-0589996a"));
+  if (name === "viewof translateY") return new Inspector(document.querySelector("#observablehq-viewof-translateY-0589996a"));
+  return ["drawMap"].includes(name);
+});
+</script>
+</body>
+
+
