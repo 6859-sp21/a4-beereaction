@@ -13,3 +13,7 @@ Of course, there were many turnarounds in the design decision processes, and we 
 To be honest, the overall development process was pretty rough for both of the students as we are new to javascript, D3 and front-end programming. Naturally, learning the necessary skills to create and present the visualizations took a long time, but we were able to come up with encodings and design decisions relatively swiftly. Yo-whan Kim took care of most of the data cleaning and augmentation using Python, while Hyeyoung Shin focused on exploratory data analysis and further cleaning using Tableau. Both worked collaboratively on the visualization design and implementation. HTML/CSS styling was mostly done by Yo-whan, and necessary research for data hierarchy organization and explanations were handled by Hyeyoung. Overall, roughly 50 hours were spent developing this application.
 
 Note: For the best experience, if you do not have a 2-column view (map on the left, filters on the right), expand the window width!
+
+By:
+Kim, Yo-whan (yowhan)
+Shin, Hyeyoung (hyshin)
