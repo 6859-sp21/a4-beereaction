@@ -1,6 +1,6 @@
 # Beereaction
 
-visualization: https://6859-sp21.github.io/a4-beereaction/
+https://6859-sp21.github.io/a4-beereaction/
 
 Beereaction is an interactive visualization that recommends and provides information about beers based on the user’s preference. While there is a plethora of beers in stores or bars, we found ourselves always going for the same choices, so we were inspired by these personal anecdotes to create a system that helps users expand their beer boundaries by providing suggestions based on the user's personalized inputs. We use BeerAdvocate’s 1.5 million beer review dataset, further augmented by Google locations API and hand-crafted beer type classification tool. For each beer name and brewery, we aggregate the mean score for the four subcategories (aroma, palate, appearance, and taste) and add location information of its brewery.  
 
