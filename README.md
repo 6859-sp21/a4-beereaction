@@ -14,6 +14,4 @@ To be honest, the overall development process was pretty rough for both of the s
 
 Note: For the best experience, if you do not have a 2-column view (map on the left, filters on the right), expand the window width!
 
-By:
-Kim, Yo-whan (yowhan)
-Shin, Hyeyoung (hyshin)
+By: Yo-whan Kim (yowhan), Hyeyoung Shin (hyshin)
